@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ticketing.controller.TicketListController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Ticket List" style="-fx-font-size: 20px; -fx-font-weight: bold;" alignment="CENTER"/>
+
+    <HBox spacing="10">
+        <Label text="Filter:"/>
+        <TextField fx:id="filterField"/>
+    </HBox>
+
+    <TableView fx:id="ticketTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="titleColumn" text="Title"/>
+            <TableColumn fx:id="departmentColumn" text="Department"/>
+            <TableColumn fx:id="statusColumn" text="Status"/>
+        </columns>
+    </TableView>
+
+    <Button text="View Details" onAction="#handleViewDetails" style="-fx-background-color: #3366FF; -fx-text-fill: white;"/>
+</VBox>

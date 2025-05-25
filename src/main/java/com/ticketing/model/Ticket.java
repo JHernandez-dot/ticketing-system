@@ -1,47 +1,57 @@
 package com.ticketing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ticket {
     private int id;
-    private Usuario solicitante;
+    private Usuario usuario;
     private Departamento departamento;
     private String estado;
-    private ArrayList<Nota> notas;
+    private List<Nota> notas;
 
-    public Ticket(int id, Usuario solicitante, Departamento departamento, String estadoInicial) {
+    public Ticket(int id, Usuario usuario, Departamento departamento, String estado) {
         this.id = id;
-        this.solicitante = solicitante;
+        this.usuario = usuario;
         this.departamento = departamento;
-        this.estado = estadoInicial;
+        this.estado = estado;
         this.notas = new ArrayList<>();
-    }
-
-    public void cambiarEstado(String nuevoEstado) {
-        this.estado = nuevoEstado;
-    }
-
-    public void agregarNota(Nota nota) {
-        notas.add(nota);
     }
 
     public int getId() {
         return id;
     }
 
-    public String getEstado() {
-        return estado;
+    public Usuario getUsuario() {
+        return usuario;
     }
+  
+public Usuario getSolicitante() {
+    return this.usuario; 
+}
 
-    public Usuario getSolicitante() {
-        return solicitante;
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Departamento getDepartamento() {
         return departamento;
     }
 
-    public ArrayList<Nota> getNotas() {
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public List<Nota> getNotas() {
         return notas;
+    }
+
+    public void agregarNota(Nota nota) {
+        notas.add(nota);
     }
 }

@@ -1,36 +1,44 @@
 package com.ticketing.service;
 
 import com.ticketing.model.Ticket;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestorDeTickets {
-    private ArrayList<Ticket> tickets;
 
-    public GestorDeTickets() {
-        this.tickets = new ArrayList<>();
+    private static GestorDeTickets instance;
+    private List<Ticket> tickets;
+
+    private GestorDeTickets() {
+        tickets = new ArrayList<>();
+    }
+
+    public static GestorDeTickets getInstance() {
+        if (instance == null) {
+            instance = new GestorDeTickets();
+        }
+        return instance;
     }
 
     public void registrarTicket(Ticket ticket) {
         tickets.add(ticket);
     }
 
-    public ArrayList<Ticket> obtenerTicketsPendientes() {
-        ArrayList<Ticket> pendientes = new ArrayList<>();
+    public List<Ticket> obtenerTickets() {
+        return tickets;
+    }
+
+    public List<Ticket> obtenerTicketsPendientes() {
+        List<Ticket> pendientes = new ArrayList<>();
         for (Ticket t : tickets) {
-            if (t.getEstado().equalsIgnoreCase("Pendiente")) {
+            if ("Pendiente".equalsIgnoreCase(t.getEstado())) {
                 pendientes.add(t);
             }
         }
         return pendientes;
     }
+    public List<Ticket> obtenerTodosLosTickets() {
+    return this.tickets; 
+}
 
-    public Ticket buscarTicketPorId(int id) {
-        for (Ticket t : tickets) {
-            if (t.getId() == id) {
-                return t;
-            }
-        }
-        return null;
-    }
 }

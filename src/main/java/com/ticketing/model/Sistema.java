@@ -1,11 +1,12 @@
 package com.ticketing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Sistema {
-    private ArrayList<String> parametros;
-    private ArrayList<String> estadosTicket;
-    private ArrayList<String> flujosTrabajo;
+    private List<String> parametros;
+    private List<String> estadosTicket;
+    private List<String> flujosTrabajo;
 
     public Sistema() {
         this.parametros = new ArrayList<>();
@@ -23,5 +24,17 @@ public class Sistema {
 
     public void agregarFlujoTrabajo(String flujo) {
         flujosTrabajo.add(flujo);
+    }
+
+    public List<String> getParametros() {
+        return parametros;
+    }
+
+    public List<String> getEstadosTicket() {
+        return estadosTicket;
+    }
+
+    public List<String> getFlujosTrabajo() {
+        return flujosTrabajo;
     }
 }

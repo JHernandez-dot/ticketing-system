@@ -1,10 +1,11 @@
 package com.ticketing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Rol {
     private String nombre;
-    private ArrayList<String> permisos;
+    private List<String> permisos;
 
     public Rol(String nombre) {
         this.nombre = nombre;
@@ -19,7 +20,7 @@ public class Rol {
         return nombre;
     }
 
-    public ArrayList<String> getPermisos() {
+    public List<String> getPermisos() {
         return permisos;
     }
 }

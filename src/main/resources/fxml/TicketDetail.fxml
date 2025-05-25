@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ticketing.controller.TicketDetailController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Ticket Detail" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <Label text="ID:"/>
+        <Label fx:id="idLabel"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Estado:"/>
+        <Label fx:id="statusLabel"/>
+    </HBox>
+
+    <Label text="Notas:"/>
+    <TextArea fx:id="notesArea" editable="false" prefHeight="100"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="noteField" promptText="Add"/>
+    </HBox>
+
+    <Button text="Cambiar Estado" onAction="#handleChangeStatus" style="-fx-background-color: #3366FF; -fx-text-fill: white;"/>
+    <Button text="Agregar Nota" onAction="#handleAddNote" style="-fx-background-color: #3366FF; -fx-text-fill: white;"/>
+</VBox>

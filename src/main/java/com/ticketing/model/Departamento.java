@@ -1,10 +1,11 @@
 package com.ticketing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Departamento {
     private String nombre;
-    private ArrayList<Usuario> usuarios;
+    private List<Usuario> usuarios;
 
     public Departamento(String nombre) {
         this.nombre = nombre;
@@ -19,7 +20,7 @@ public class Departamento {
         return nombre;
     }
 
-    public ArrayList<Usuario> getUsuarios() {
+    public List<Usuario> getUsuarios() {
         return usuarios;
     }
 }

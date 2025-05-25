@@ -14,12 +14,15 @@ public class ConexionDB {
             try (InputStream input = ConexionDB.class.getClassLoader().getResourceAsStream("db.properties")) {
                 Properties prop = new Properties();
                 prop.load(input);
+
                 String url = prop.getProperty("db.url");
                 String user = prop.getProperty("db.user");
                 String password = prop.getProperty("db.password");
+
                 conexion = DriverManager.getConnection(url, user, password);
             } catch (Exception e) {
                 e.printStackTrace();
+                throw new SQLException("Error conectando a la base de datos.", e);
             }
         }
         return conexion;
